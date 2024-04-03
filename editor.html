@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        } 
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            margin-top: 10px; 
+            background-color: rgb(224, 224, 224);
+        }
+
+        .box, header {
+            border: 1px solid #ccc;
+            padding: 20px;
+            max-width: 600px; 
+            text-align: center;
+            border-radius: 25px;
+            background-color:white;
+            
+        }
+
+        .box p , p a {
+            margin-bottom: 30px; 
+            width: 600px;
+            padding-right: 25px;
+        }
+
+        header {
+            background-color: #f6a7cd;
+            color: black;
+            text-align: center;
+            padding: 1px 0px;
+            align-items: center;
+            padding-top: 40px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 14px;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        #editor-info {
+            justify-content: center;
+            align-items: center;    
+        }
+
+        .color1 {
+            background-color: #f6a7cd;
+            border-radius: 25px;
+            padding-bottom: 20px;
+        }
+
+        .jump-to-bottom {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="box">
+            <!-- Add a "Jump to Bottom" link -->
+            <a href="#bottom" class="jump-to-bottom">Jump to Bottom</a>
+            
+            <section id="editor-info">
+                <header style="margin-bottom: 10px;">
+                    <p style="font-size: 25px;"><b>Page Editor</b></p>
+                </header>
+                <hr>
+                <h5><i>Name: Nethmi Himara</i></h5>
+                <h5><i>Role: Student 3</i></h5>
+                <h5><i>The following pages were edited by me:</i></h5>
+                <hr>
+            </section>
+            
+            <div class="color1">
+                <!-- User Profile Section -->
+                <section id="user-profile">
+                    <br>
+                    <h4><b>User Profile</b></h4><br>
+                    <p>Created a user profile using prompts<br>
+                    Update and display user profile<br>
+                    Provide feedback on the profile completion progress</p>
+                    <p><a href="profile.html">link to user profile</a></p> <!-- Link to User Profile -->
+                </section>
+
+                <!-- Team Page Section -->
+                <section id="team-page">
+                    <br>
+                    <h4><b>Team Page</b></h4><br>
+                    <p>Created a team page with interactive thumbnails <br> Added hover effects and altered visibility <br> Shows the role of each student and their names</p>
+                    <p><a href="team.html">link to team page</a></p> <!-- Link to Team Page -->
+                </section>
+
+                <!-- Content Page Section -->
+                <section id="content-page">
+                    <br>
+                    <h4><b>Content page</b></h4><br>
+                    <p>Created an additional content page <br> Added content related to the topic of the website</p>
+                    <p><a href="content.html">link to content page</a></p> <!-- Link to Content Page -->
+                </section>
+            </div>
+        </div>
+
+        <!-- Anchor point at the bottom of the page -->
+        <div id="bottom"></div>
+        
+    </main>
+</body>
+</html>

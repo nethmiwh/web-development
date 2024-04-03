@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team Page</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #87a1ff;
+        padding-top: 70px;
+    }
+
+    .main {
+        padding: 30px;
+        text-align: center;
+    }
+
+    .team {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .thumbnail {
+        position: relative;
+        margin: 20px;
+        overflow: hidden;
+        border: 2px solid transparent;
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease,
+        transform 0.3s ease; 
+    }
+
+    .thumbnail:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        transform: scale(1.05);
+        border-color: #4a4a4a;
+    }
+
+    .thumbnail img {
+        width: 200px;
+        height: auto;
+        transition: opacity 0.3s ease;
+    }
+
+    .thumbnail:hover img {
+        opacity: 0.7;
+    }
+
+    .details {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(69, 69, 69, 0.817);
+        color:aliceblue;
+        text-align: center;
+        transition: transform 0.3s ease;
+        transform: translateY(100%);
+        border-radius: 0 0 10px 10px; 
+    }
+
+    .thumbnail:hover .details {
+        transform: translateY(0);
+    }
+
+    .details p {
+        margin: 5px 0;
+        font-size: 14px;
+    }
+
+    .heading {
+        color: black;
+        font-family: 'Times New Roman', Times, serif;
+        margin-bottom: 20px; 
+    }
+    .student-name {
+        font-size: larger;
+    }
+    h1 {
+    border: 2px solid rgb(129, 129, 129); 
+    padding: 10px; 
+    display: inline-block; 
+    background-color: rgb(240, 239, 239); 
+    }
+    
+</style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+            </div>
+            <div>
+                <h2>Quality Education</h2>
+            </div>
+            <nav>
+              <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
+                <li><a href="team.html" class="active">Team</a></li>
+                <li><a href="content.html">Content</a></li>
+              </ul>
+            </nav>
+        </header>
+    </div>
+    <div class="container">
+      <div class="main">
+        <h1 class="heading">Student Details</h1>
+        <h4>About Us - Hover over the images for details!</h4>
+        <div class="team">
+            <div class="thumbnail">
+                <img src="nisith_image.jpeg" alt="Member 1">
+                <div class="details">
+                    <p> <b class="student-name">Nisith Induwara</b></p>
+                    <p>Role: Student 1</p>
+                    <p>Designed and implemented pages: Splash Screen | Shop</p>
+                </div>
+            </div>
+
+            <div class="thumbnail">
+                <img src="praneeth_image.jpeg" alt="Member 2">
+                <div class="details">
+                    <p><b class="student-name">Praneeth Perera</b></p>
+                    <p>Role: Student 2</p>
+                    <p>Designed and implemented pages: Home page + navigation | Feedback</p>
+                </div>
+            </div>
+
+            <div class="thumbnail">
+                <img src="nethmi_image.jpg" alt="Member 3">
+                <div class="details">
+                    <p><b class="student-name">Nethmi Himara</b></p>
+                    <p>Role: Student 3</p>
+                    <p>Designed and implemented pages: User Profile | Team </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer-container">
+  <footer>
+    <p> <a href="editor.html">Page Editor</a> </p>
+  </footer>
+</div>
+</body>
+</html>

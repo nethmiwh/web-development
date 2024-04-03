@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Profile</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #87a1ff;
+    padding-top: 70px;
+    padding-bottom: 20px;
+  }
+  #profile-form {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  .step {
+    display: none;
+  }
+  .step.active {
+    display: block;
+  }
+  .input-container {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  .input-container p {
+    margin: 0 0 10px;
+  }
+  input[type="text"] {
+    width: 96%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  button {
+    padding: 10px 20px;
+    background-color: #607aff;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 2px;
+  }
+  button.previous { 
+    padding: 10px 8px; 
+    background-color: #607aff;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;  
+  }
+  button:hover {
+    background-color: rgb(183, 190, 50);
+  }
+  #progress-bar {
+    background-color: #f0f0f0;
+    width: 100%;
+    height: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  #progress-bar-inner {
+    background-color: #4caf50;
+    height: 100%;
+    width: 0%;
+    transition: width 0.5s ease;
+  }
+  #user-values {
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding-left: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  #user-values p,
+  #user-values hr {
+  margin-bottom: 17px; 
+  margin-top: 17px; 
+  }
+  h2 {
+    line-height: 2.5;
+  }
+  h3{
+    padding-top: 25px; 
+  } 
+  
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+         <img src="logo.png" alt="Logo">
+      </div>
+      <div>
+         <h2>Quality Education</h2>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="profile.html" class="active">Profile</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="sitemap.html">Sitemap</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="content.html">Content</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+  <div class="container">
+   <div id="profile-form">
+      <div class="step active" id="step1">
+        <h2>STEP 1 Personal details | Question 1/5</h2>
+        <div class="input-container">
+          <p>Enter your name:</p>
+          <input type="text" id="name">
+        </div>
+        <div>
+          <button onclick="nextStep()">Next</button>
+          <button onclick="nextStep()">Skip</button>
+        </div>
+      </div>
+      <div class="step" id="step2">
+        <h2>STEP 1 Personal details | Question 2/5</h2>
+        <div class="input-container">
+          <p>Enter your surname:</p>
+          <input type="text" id="surname">
+        </div>
+        <div>
+          <button onclick="nextStep()">Next</button>
+          <button onclick="nextStep()">Skip</button>
+          <button class="previous" onclick="previousStep()">Previous</button>
+        </div>
+      </div>
+      <div class="step" id="step3">
+        <h2>STEP 1 Personal details | Question 3/5</h2>
+        <div class="input-container">
+          <p>Enter your age:</p>
+          <input type="text" id="age">
+        </div>
+        <div>
+          <button onclick="nextStep()">Next</button>
+          <button onclick="nextStep()">Skip</button>
+          <button class="previous" onclick="previousStep()">Previous</button>
+        </div>
+      </div>
+      <div class="step" id="step4">
+        <h2>STEP 1 Personal details | Question 4/5</h2>
+        <div class="input-container">
+          <p>Enter your gender:</p>
+          <input type="text" id="gender">
+        </div>
+        <div>
+          <button onclick="nextStep()">Next</button>
+          <button onclick="nextStep()">Skip</button>
+          <button class="previous" onclick="previousStep()">Previous</button>
+        </div>
+      </div>
+      <div class="step" id="step5">
+        <h2>STEP 1 Personal details | Question 5/5</h2>
+        <div class="input-container">
+          <p>Agree with privacy terms:</p>
+          <input type="text" id="privacyTerms">
+        </div>
+        <div>
+          <button onclick="nextStep()">Next</button>
+          <button onclick="nextStep()">Skip</button>
+          <button class="previous" onclick="previousStep()">Previous</button>
+        </div>
+      </div>
+      <div class="step" id="step6">
+        <h2>STEP 2 Volunteering tasks | Question 1/5</h2>
+        <div class="input-container">
+          <p>Rational:</p>
+          <input type="text" id="rational">
+        </div>
+        <div>
+          <button onclick="nextStep()">Next</button>
+          <button onclick="nextStep()">Skip</button>
+          <button class="previous" onclick="previousStep()">Previous</button>
+        </div>
+      </div>
+      <div class="step" id="step7">
+        <h2>STEP 2 Volunteering tasks | Question 2/5</h2>
+        <div class="input-container">
+          <p>DoA:</p>
+          <input type="text" id="doa">
+        </div>
+        <div>
+          <button onclick="nextStep()">Next</button>
+          <button onclick="nextStep()">Skip</button>
+          <button class="previous" onclick="previousStep()">Previous</button>
+        </div>
+      </div>
+      <div class="step" id="step8">
+        <h2>STEP 2 Volunteering tasks | Question 3/5</h2>
+        <div class="input-container">
+          <p>Task:</p>
+          <input type="text" id="task">
+        </div>
+        <div>
+          <button onclick="nextStep()">Next</button>
+          <button onclick="nextStep()">Skip</button>
+          <button class="previous" onclick="previousStep()">Previous</button>
+        </div>
+      </div>
+      <div class="step" id="step9">
+        <h2>STEP 2 Volunteering tasks | Question 4/5</h2>
+        <div class="input-container">
+          <p>Place:</p>
+          <input type="text" id="place">
+        </div>
+        <div>
+          <button onclick="nextStep()">Next</button>
+          <button onclick="nextStep()">Skip</button>
+          <button class="previous" onclick="previousStep()">Previous</button>
+        </div>
+      </div>
+      <div class="step" id="step10">
+        <h2>STEP 2 Volunteering tasks | Question 5/5</h2>
+        <div class="input-container">
+          <p>Assignment type:</p>
+          <input type="text" id="assignmentType">
+        </div>
+        <div>
+          <button onclick="nextStep()">Next</button>
+          <button onclick="nextStep()">Skip</button>
+          <button class="previous" onclick="previousStep()">Previous</button>
+        </div>
+      </div>
+      <div class="step" id="step11">
+        <h2>STEP 3 Qualifications | Question 1/5</h2>
+        <div class="input-container">
+          <p>Area of study:</p>
+          <input type="text" id="areaOfStudy">
+        </div>
+        <div>
+          <button onclick="nextStep()">Next</button>
+          <button onclick="nextStep()">Skip</button>
+          <button class="previous" onclick="previousStep()">Previous</button>
+        </div>
+      </div>
+      <div class="step" id="step12">
+        <h2>STEP 3 Qualifications | Question 2/5</h2>
+        <div class="input-container">
+          <p>Highest degree:</p>
+          <input type="text" id="highestDegree">
+        </div>
+        <div>
+          <button onclick="nextStep()">Next</button>
+          <button onclick="nextStep()">Skip</button>
+          <button class="previous" onclick="previousStep()">Previous</button>
+        </div>
+      </div>
+      <div class="step" id="step13">
+        <h2>STEP 3 Qualifications | Question 3/5</h2>
+        <div class="input-container">
+          <p>University/Institution:</p>
+          <input type="text" id="institution">
+        </div>
+        <div>
+          <button onclick="nextStep()">Next</button>
+          <button onclick="nextStep()">Skip</button>
+          <button class="previous" onclick="previousStep()">Previous</button>
+        </div>
+      </div>
+      <div class="step" id="step14">
+        <h2>STEP 3 Qualifications | Question 4/5</h2>
+        <div class="input-container">
+          <p>Completion year:</p>
+          <input type="text" id="completionYear">
+        </div>
+        <div>
+          <button onclick="nextStep()">Next</button>
+          <button onclick="nextStep()">Skip</button>
+          <button class="previous" onclick="previousStep()">Previous</button>
+        </div>
+      </div>
+      <div class="step" id="step15">
+        <h2>STEP 3 Qualifications | Question 5/5</h2>
+        <div class="input-container">
+          <p>Country:</p>
+          <input type="text" id="country">
+        </div>
+        <div>
+          <button onclick="nextStep()">Next</button>
+          <button onclick="nextStep()">Skip</button>
+          <button class="previous" onclick="previousStep()">Previous</button>
+        </div>
+      </div>
+      <div class="step" id="step16">
+        <h2>STEP 4 Availability and contact | Question 1/4</h2>
+        <div class="input-container">
+          <p>Minimum hours per week:</p>
+          <input type="text" id="availability">
+        </div>
+        <div>
+          <button onclick="nextStep()">Next</button>
+          <button onclick="nextStep()">Skip</button>
+          <button class="previous" onclick="previousStep()">Previous</button>
+        </div>
+      </div>
+      <div class="step" id="step17">
+        <h2>STEP 4 Availability and contact | Question 2/4</h2>
+        <div class="input-container">
+          <p>Surname:</p>
+          <input type="text" id="surname1">
+        </div>
+        <div>
+          <button onclick="nextStep()">Next</button>
+          <button onclick="nextStep()">Skip</button>
+          <button class="previous" onclick="previousStep()">Previous</button>
+        </div>
+      </div>
+      <div class="step" id="step18">
+        <h2>STEP 4 Availability and contact | Question 3/4</h2>
+        <div class="input-container">
+          <p>Contact number:</p>
+          <input type="text" id="contact">
+        </div>
+        <div>
+          <button onclick="nextStep()">Next</button>
+          <button onclick="nextStep()">Skip</button>
+          <button class="previous" onclick="previousStep()">Previous</button>
+        </div>
+      </div>
+      <div class="step" id="step19">
+        <h2>STEP 4 Availability and contact | Question 4/4</h2>
+        <div class="input-container">
+          <p>Email:</p>
+          <input type="text" id="email">
+        </div>
+        <button onclick="submitForm()">Submit</button>
+        <button class="previous" onclick="previousStep()">Previous</button>
+      </div>  
+    <div id="progress"></div>
+    <div id="progress-bar">
+    <div id="progress-bar-inner"></div>
+    </div>
+    <div id="user-values"></div>
+   </div>
+
+ <script>
+  let currentStep = 1;
+  let progress = 0;
+  const progressBar = document.getElementById('progress');
+  const progressBarInner = document.getElementById('progress-bar-inner');
+  const userValuesContainer = document.getElementById('user-values');
+
+  function nextStep() { // Function to navigate to next step
+    document.getElementById(`step${currentStep}`).classList.remove('active');
+    currentStep++;
+    document.getElementById(`step${currentStep}`).classList.add('active');
+    updateProgress();
+  }
+
+  function previousStep() { // Function to navigate to previous step
+    document.getElementById(`step${currentStep}`).classList.remove('active');
+    currentStep--;
+    document.getElementById(`step${currentStep}`).classList.add('active');
+    updateProgress();
+  }
+
+  function submitForm() { // Function to submit form
+    alert('Form submitted successfully!');
+
+    const name = document.getElementById('name').value;
+    const surname = document.getElementById('surname').value;
+    const age = document.getElementById('age').value;
+    const gender = document.getElementById('gender').value;
+    const privacyTerms = document.getElementById('privacyTerms').value;
+    const rational = document.getElementById('rational').value;
+    const doa = document.getElementById('doa').value;
+    const task = document.getElementById('task').value;
+    const place = document.getElementById('place').value;
+    const assignmentType = document.getElementById('assignmentType').value;
+    const areaOfStudy = document.getElementById('areaOfStudy').value;
+    const highestDegree = document.getElementById('highestDegree').value;
+    const institution = document.getElementById('institution').value;
+    const completionYear = document.getElementById('completionYear').value;
+    const country = document.getElementById('country').value;
+    const availability = document.getElementById('availability').value;
+    const surname1 = document.getElementById('surname1').value;
+    const contact = document.getElementById('contact').value;
+    const email = document.getElementById('email').value;
+
+    const userValuesHTML = `
+      <h3>User Profile</h3>
+      <p>Name: ${name}</p>
+      <p>Surname: ${surname}</p>
+      <p>Age: ${age}</p>
+      <p>Gender: ${gender}</p>
+      <p>Agree with privacy terms: ${privacyTerms}</p>
+      <hr>
+      <p>Rational: ${rational}</p>
+      <p>DoA: ${doa}</p>
+      <p>Task: ${task}</p>
+      <p>Place: ${place}</p>
+      <p>Assignment Type: ${assignmentType}</p>
+      <hr>
+      <p>Area of Study: ${areaOfStudy}</p>
+      <p>Highest Degree: ${highestDegree}</p>
+      <p>University/Institution: ${institution}</p>
+      <p>Completion Year: ${completionYear}</p>
+      <p>Country: ${country}</p>
+      <hr>
+      <p>Availability for volunteering: ${availability}</p>
+      <p>Surname: ${surname1}</p>
+      <p>Tel: ${contact}</p>
+      <p>Email: ${email}</p>
+      <br>
+    `;
+    userValuesContainer.innerHTML = userValuesHTML;
+  }
+
+  function updateProgress() {
+    const stepCount = 19; 
+    progress = Math.floor((currentStep) / stepCount * 100);
+    progressBar.innerHTML = `<br>Profile completed: ${progress}%`;
+    progressBarInner.style.width = `${progress}%`;
+    if (progress < 100) {
+      setTimeout(updateProgress, 200); 
+    }
+  }
+  </script>
+  </div>
+  <div class="footer-container">
+   <footer>
+     <p> <a href="editor.html">Page Editor</a> </p>
+   </footer>
+  </div>
+</body>
+</html>
